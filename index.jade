@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+        link(href='https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css', rel='stylesheet')
+        link(href='css/main.css', rel='stylesheet')
+        script(src='js/vendor/angular.min.js')
+    body(ng-app='Top10App')
+        .header
+            .container 10
+        .main(ng-controller="MainController")
+            .container
+                .content
+                    div(ng-repeat='show in shows')
+                        div.rank {{ $index + 1 }}
+                        tv-show(info='show')
+
+
+        // Modules
+        script(src='js/app.js')
+        // Controllers
+        script(src='js/controllers/MainController.js')
+        // Directives
+        script(src='js/directives/tvShow.js')
+        // Services
+        script(src='js/services/show.js')
